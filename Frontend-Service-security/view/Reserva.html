@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+    <!-- librerias -->
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css" rel="stylesheet">
+    <!-- ajax -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Script -->
+    <script src='../js/Reserva.js'></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="inputData">
+            <form>
+                <fieldset>
+                    <legend>Prestamo Details</legend>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Fecha reserva</label>
+                        <div class="col-sm-10">
+                            <input type="hidden" name="id" id="id" value="">
+                            <input type="date" class="form-control" name="fecha_reserva" id="fecha_reserva" value=""
+                                placeholder="fecha_reserva">
+                            <br>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Ejemplar Id</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" id="ejemplar_id">
+                                <option selected>--Seleccione--</option>
+                            </select>
+                            <br>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Usuario Id</label>
+                            <div class="col-sm-10">
+                                <select class="form-select" id="usuario_id">
+                                    <option selected>--Seleccione--</option>
+                                </select>
+                                <br>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Fecha reserva</label>
+                                <div class="col-sm-10">
+                                    <input type="hidden" name="id" id="id" value="">
+                                    <input type="date" class="form-control" name="fecha_reserva" id="fecha_reserva" value=""
+                                        placeholder="fecha_reserva">
+                                    <br>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-10">
+                                <select class="form-select" id="state">
+                                    <option selected>--Seleccione--</option>
+                                    <option value="1">Activo</option>
+                                    <option value="0">Inactivo</option>
+                                </select>
+                            </div>
+                        </div>
+
+                </fieldset>
+            </form>
+        </div>
+        <div id="buttonData">
+            <br>
+            <button name="btnAgregar" onclick="save()" class="btn btn-success">Agregar</button>
+        </div>
+        <div id="outputData">
+            <br>
+            <table class="table table-hover">
+                <thead>
+                    <tr class="table-dark">
+                        <th>Usuario Id </th>
+                        <th>Ejemplar Id </th>
+                        <th>Fecha Reserva </th>
+                        <th>State</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="resultData">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    loadData();
+    loadEjemplar();
+    loadUsuario();
+</script>
+
+</html>
